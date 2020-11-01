@@ -1,0 +1,14 @@
+{% import'bootstrap/wtf.html' as wtf %}
+<nav class="navbar navbar-default" style="padding:0;margin:0;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><h2 style="color:rgba(0, 0, 0, 0.596);font-weight:bold;padding:0;margin:auto;font-size: xx-large;">BLOG IT</h2></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{{ url_for('main.index') }}">Home</a></li>
+        
+        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        <li><a href="{{ url_for('main.new_post') }}">create post</a></li>
+      </ul>
+    </div>
+</nav>
