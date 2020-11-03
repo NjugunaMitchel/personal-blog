@@ -1,7 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField,BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from flask_wtf.csrf import CSRFProtect
 from ..models import Users
 
 class Signupform(FlaskForm):
@@ -13,11 +12,11 @@ class Signupform(FlaskForm):
 
 
     def validate_email(self,data_field):
-         if User.query.filter_by(email =data_field.data).first():
+         if Users.query.filter_by(email =data_field.data).first():
              raise ValidationError('There is an account with that email')
 
     def validate_username(self,data_field):
-         if User.query.filter_by(username = data_field.data).first():
+         if Users.query.filter_by(username = data_field.data).first():
              raise ValidationError('That username is taken')
 
 

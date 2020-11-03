@@ -1,3 +1,10 @@
-AM LOADED
-<a href="{{url_for('auth.login')}}">login</a>
-<a href="{{url_for('auth.signup')}}">sign</a>
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="margin:0px;padding:0px;width:100vw;height:100vh;background:url('https://images.unsplash.com/photo-1432821579285-1b649e5b1ce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');background-position: center;background-repeat: no-repeat;background-size: cover;overflow: hidden;">
+    <p style="width:700px;color:rgb(15, 14, 14);margin:230px auto;font-size: 30px;padding-right:10px;font-weight:900">
+        <span>Welcome </span> to blog it a platform to share whats on your mind encourage others and get to learn more!To continue join us
+         <button style="border-radius: 6px;color:black;background-color: black;border-color: cornflowerblue;"><a style ="color:white" href="auth/signup.html">Sign up</a></button>
+    </p>
+</div>
+
+{% endblock %}

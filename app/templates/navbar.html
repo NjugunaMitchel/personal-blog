@@ -1,15 +1,20 @@
 {% import'bootstrap/wtf.html' as wtf %}
-<nav class="navbar navbar-default" style="padding:0;margin:0;">
+{% block styles%}
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Syne+Mono&display=swap" rel="stylesheet">
+{% endblock %}
+<nav class="navbar navbar-default" style="background-color: #333;font-family: 'Caveat', cursive;
+font-family: 'Syne Mono', monospace;margin:0px;padding:0px">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#"><h2 style="color:rgba(0, 0, 0, 0.596);font-weight:bold;padding:0;margin:auto;font-size: xx-large;">BLOG IT</h2></a>
+        <a class="navbar-brand" href="#"><h2 style="color:#c0c0c0;font-weight:bold;padding:0;margin:auto;font-size: xx-large;">BLOG IT</h2></a>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ url_for('main.index') }}">Home</a></li>
+      <ul class="nav navbar-nav" style="font-size: larger;">
+        <li><a href="{{ url_for('main.home') }}">Home</a></li>
         
-        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
         <li><a href="{{ url_for('main.new_post') }}">create post</a></li>
-        <li><a href="{{ url_for('main.profile') }}">profile</a></li>
+        <li><a href="{{ url_for('auth.signup') }}">signup</a></li>
+        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        
       </ul>
     </div>
 </nav>

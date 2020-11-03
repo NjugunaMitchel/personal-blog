@@ -15,10 +15,10 @@ def new_post():
     return render_template('/posts.html', title = true)
 
 
-@main.route('/users/<usernam>')
+@main.route('/users/<uname>')
 def profile(uname):
-    user = User.query.filter_by(username = uname).first()
+    user = Users.query.filter_by(username = uname).first()
     if user is None:
         abort(404)
     
-    return render_template("/profile/profile.html", users = users)
+    return render_template("/profile/profile.html", user = user)
